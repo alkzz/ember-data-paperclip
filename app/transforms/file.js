@@ -34,7 +34,7 @@ export default Transform.extend({
   deserialize: function(serialized, attributeMeta) {
     const File = getOwner(this).factoryFor('object:file');
 
-    return File.create(serialized, config.paperclip, assign(copy(attributeMeta), {
+    return File.create(config.paperclip, assign(copy(attributeMeta), {
       isNew: isEmpty(serialized),
       isEmpty: isEmpty(serialized),
       attributes: Object.keys(serialized || {})
